@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Molecular Hydration Lotion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">NEXUS<span>LABS</span></div>
+        <ul class="nav-links">
+            <li><a href="#diagnostic">Skin Diagnostic</a></li>
+            <li><a href="#science">The Science</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#buy">Shop Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Zero Grease. <br>Pure Molecular Hydration.</h1>
+            <p>Engineered with advanced Intermolecular Force (IMF) technology to lock in moisture without the slick residue.</p>
+            <a href="#diagnostic" class="btn">Analyze Your Skin</a>
+        </div>
+    </header>
+
+    <!-- NEW COMPONENT: Interactive Skin Diagnostic Q&A Section -->
+    <section id="diagnostic" class="diagnostic-section">
+        <h2>Skin Condition Diagnostic</h2>
+        <p class="subtitle">Select your primary skin concern below to see how our IMF matrix adapts to your biology.</p>
+        
+        <div class="qa-container">
+            <div class="qa-options">
+                <h3>What is currently wrong with your skin?</h3>
+                
+                <label class="option-label">
+                    <input type="radio" name="skinConcern" value="flaky" onclick="evaluateSkin('flaky')" checked>
+                    <span class="custom-radio"></span>
+                    Extremely Dry & Flaky (Severe moisture loss)
+                </label>
+                
+                <label class="option-label">
+                    <input type="radio" name="skinConcern" value="greasy-dehydrated" onclick="evaluateSkin('greasy-dehydrated')">
+                    <span class="custom-radio"></span>
+                    Oily on Top, Tight Underneath (Dehydrated skin barrier)
+                </label>
+                
+                <label class="option-label">
+                    <input type="radio" name="skinConcern" value="sensitive" onclick="evaluateSkin('sensitive')">
+                    <span class="custom-radio"></span>
+                    Red & Irritated (Compromised outer barrier)
+                </label>
+                
+                <label class="option-label">
+                    <input type="radio" name="skinConcern" value="normal" onclick="evaluateSkin('normal')">
+                    <span class="custom-radio"></span>
+                    Normal/Dull Skin (Looking for a weightless glow)
+                </label>
+            </div>
+
+            <div class="qa-result-box">
+                <h3>Molecular Prescription</h3>
+                <div id="diagnosticOutput">
+                    <h4 id="prescTitle">Targeting Severe Moisture Loss</h4>
+                    <p id="prescDesc">When skin is peeling and flaky, your natural lipid layer is cracked, allowing deep water evaporation. Our <strong>Hydrogen Bonding Matrix</strong> binds immediately to these dry areas. Because the Aloe Vera and Glycerin carry strong O-H charges, they lock into your skin cells like a magnet, flooding flakes with water while the suspended jojoba droplets seal the cracks without causing breakouts.</p>
+                    <div class="imf-badge-container">
+                        <span class="imf-badge" id="prescBadge">Primary IMF: Hydrogen Bonding Network</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section id="science" class="science-section">
+        <h2>The IMF Breakthrough</h2>
+        <p class="subtitle">How we re-engineered skincare at the molecular level.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Hydrogen Bonding Matrix</h3>
+                <p>Our Aloe and Glycerin base forms strong hydrogen bonds that fuse with skin proteins, driving instant, deep absorption.</p>
+            </div>
+            <div class="card">
+                <h3>Suspended Dispersion Forces</h3>
+                <p>Heavy oils are broken into micro-droplets, preventing London dispersion forces from forming a greasy film on your skin.</p>
+            </div>
+            <div class="card">
+                <h3>Dipole-Induced Delivery</h3>
+                <p>Controlled boundary forces pull vital nutrients deep into the skin barrier instead of letting them pool on top.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section id="ingredients" class="ingredients-section">
+        <h2>The Formula Architecture</h2>
+        <div class="ingredients-container">
+            <div class="ing-item"><strong>75% Hydration Matrix:</strong> Organic Aloe Vera Gel & Vegetable Glycerin</div>
+            <div class="ing-item"><strong>25% Active Lipid Phase:</strong> Jojoba Esters & Pure Vitamin E Oil</div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Shop Section -->
+    <section id="buy" class="cta-section">
+        <div class="cta-box">
+            <h2>Ready for a Greaseless Reset?</h2>
+            <p>Get the Nexus Molecular Hydration Fluid today.</p>
+            <p class="price">$34.00 — 3.4 FL OZ</p>
+            <button class="btn btn-dark">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nexus Labs. Formulated through Chemistry.</p>
+    </footer>
+
+    <!-- JavaScript Diagnostic Router Logic -->
+    <script>
+        function evaluateSkin(concern) {
+            const title = document.getElementById('prescTitle');
+            const desc = document.getElementById('prescDesc');
+            const badge = document.getElementById('prescBadge');
+            
+            // Text dictionary containing scientific answers mapped to user choices
+            const data = {
+                'flaky': {
+                    title: 'Targeting Severe Moisture Loss',
+                    badge: 'Primary IMF: Hydrogen Bonding Network',
+                    desc: 'When skin is peeling and flaky, your natural lipid layer is cracked, allowing deep water evaporation. Our <strong>Hydrogen Bonding Matrix</strong> binds immediately to these dry areas. Because the Aloe Vera and Glycerin carry strong O-H charges, they lock into your skin cells like a magnet, flooding flakes with water while the suspended jojoba droplets seal the cracks without causing breakouts.'
+                },
+                'greasy-dehydrated': {
+                    title: 'Balancing Overcompensated Sebum',
+                    badge: 'Primary IMF: London Dispersion Trapping',
+                    desc: 'Skin often produces excess surface grease because it is dehydrated underneath. Traditional heavy lotions make this worse. Nexus solves this by keeping oils confined in micro-droplets via <strong>Dipole-Induced forces</strong>. The weightless water-gel base penetrates your skin first, fixing the deep dehydration so your skin naturally shuts off its excess oil production.'
+                },
+                'sensitive': {
+                    title: 'Calming an Irritated Barrier',
+                    badge: 'Primary IMF: Dipole-Induced Stabilization',
+                    desc: 'Irritated skin has an overactive neural response to heavy topical creams. Because our lotion structures Vitamin E and Jojoba into isolated molecules rather than a thick sheet, it applies with zero surface drag. Dipole-induced interactions allow the healing Aloe and Vitamin E molecules to gently slip past irritated epidermal receptors, leaving skin deeply micro-nourished without any stinging.'
+                },
+                'normal': {
+                    title: 'Maintaining the Weightless Glow',
+                    badge: 'Primary IMF: Perfect Fluid Balance',
+                    desc: 'For normal skin, heavy lotions cause unnecessary clogging and a shiny look. Nexus works as a daily preventative treatment. The strong hydrogen bonding creates an invisible, weightless matrix that allows your skin to breathe normally, providing exactly enough hydration for a clean, velvety finish all day long.'
+                }
+            };
+
+            // Inject the selected condition profile into the UI readout display box
+            title.innerText = data[concern].title;
+            badge.innerText = data[concern].badge;
+            desc.innerHTML = data[concern].desc;
+        }
+    </script>
+</body>
+</html>
